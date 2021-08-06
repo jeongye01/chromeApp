@@ -1,21 +1,67 @@
 .left__header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 4em;
+  width: 100%;
 }
 .name-form {
-  border: 3px solid white;
-  border-radius: 20px;
-  padding: 10px;
+  width: 40%;
+  height: 90%;
+  border: var(--border);
+  border-radius: 4em;
+  padding: 0.2em;
 }
 .name-input {
-  border: none;
-  color: white;
-  outline: none;
-  font-size: 25px;
-  background-color: transparent;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 .name-input::placeholder {
-  color: white;
-  font-size: 25px;
+  color: var(--main-color);
+  font-size: 1.2em;
+}
+.name-input:focus {
+  color: var(--main-color);
+}
+.music {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.music__title {
+  width: 60%;
+  color: var(--main-color);
+  border: var(--border);
+  border-radius: 2em;
+  padding: 0.2em;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+.music__btns {
+  width: 60%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+.music__btns button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.7em;
+  height: 1.7em;
+  color: var(--main-color);
+  border: var(--border);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.music__btns button i {
+  font-size: 0.8em;
 }
