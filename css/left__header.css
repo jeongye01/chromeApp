@@ -1,0 +1,21 @@
+.left__header {
+  display: flex;
+  align-items: center;
+}
+.name-form {
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 10px;
+}
+.name-input {
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 25px;
+  background-color: transparent;
+  text-align: center;
+}
+.name-input::placeholder {
+  color: white;
+  font-size: 25px;
+}
