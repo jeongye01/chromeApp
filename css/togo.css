@@ -1,0 +1,91 @@
+.togo {
+  width: 80%;
+  padding: 1em;
+  background-color: rgba(255, 192, 203, 0.4);
+  border-radius: 2em;
+}
+.togo__header {
+  color: var(--main-color);
+}
+.togo__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+.togo__content button {
+  border: none;
+  background-color: transparent;
+}
+.togo__content button i {
+  font-size: 1.5em;
+  color: var(--main-color);
+}
+
+.togo__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: calc(var(--togoImg-width) * 3);
+  height: var(--togoImg-height);
+  overflow-x: hidden;
+}
+
+.togo__slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+.togo__slider__item {
+  display: flex;
+}
+
+.togo__photo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5em;
+  width: var(--togoImg-width);
+  height: var(--togoImg-height);
+}
+
+.togo__photo img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.7em;
+}
+
+.togo__btns {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="radio"],
+input[type="radio"]:checked {
+  appearance: none;
+  width: var(--radio-size);
+  height: var(--radio-size);
+  border-radius: 50%;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  background-color: var(--main-color);
+  border: var(--border);
+}
+
+input[type="radio"]:checked {
+  background-color: indigo;
+}
+.togo__clock {
+  position: absolute;
+}

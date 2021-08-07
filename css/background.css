@@ -2,8 +2,9 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   padding: 2em;
+  position: relative;
 }
 .bgImage {
   position: absolute;

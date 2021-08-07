@@ -8,6 +8,8 @@
   <title>Momentum</title>
   <script src="src/index.js" defer></script>
   <script src="src/background.js" defer></script> 
+  <script src="src/togo.js" defer></script> 
+  <script src="src/quotes.js" defer></script>
 </head>
 <body>
   <div class="left">
@@ -26,22 +28,29 @@
       </div>
     </div>
   </section>
-  <section class="quotes">
-    <div class="quote">
-      <p class="quote__text"></p>
-    </div>
-  </section>
+  <div class="quotes-weahter-container">
+    <section class="quotes">
+      <p class="quotes__text">faslkdnflasndfl</p>
+  
+    </section>
+    <section class="weather">
+      <div class="quote">
+        <p class="quote__text"></p>
+      </div>
+    </section>
+  </div>
+ 
     <section class="togo">
       <header class="togo__header">
         <span>Outside Korea</span>
         <i class="fas fa-plane-departure"></i></header>
       <div class="togo__content">
-          <button class="togo__slider-btn togo__left-btn">
-            <i class="fas fa-chevron-left"></i>
+          <button>
+            <i class="fas fa-chevron-left" data-id="left-btn"></i>
           </button>
           <div class="togo__wrapper">
               <ul class="togo__slider">
-                  <li class="togo__slider">
+                  <li class="togo__slider__item">
                       <div class="togo__photo">
                           <img src="img/destinations/arab.jpg" alt="">
                           <div class="togo__clock">
@@ -64,7 +73,7 @@
                           </div>
                       </div>
                   </li>
-                  <li class="togo__slider">
+                  <li class="togo__slider__item">
                     <div class="togo__photo">
                         <img src="img/destinations/germany.jpg" alt="">
                         <div class="togo__clock">
@@ -87,7 +96,7 @@
                         </div>
                     </div>
                   </li>
-                  <li class="togo__slider">
+                  <li class="togo__slider__item">
                   <div class="togo__photo">
                       <img src="img/destinations/istanbul.jpg" alt="">
                       <div class="togo__clock">
@@ -110,7 +119,7 @@
                       </div>
                   </div>
                   </li>
-                  <li class="togo__slider">
+                  <li class="togo__slider__item">
                 <div class="togo__photo">
                     <img src="img/destinations/london.jpg" alt="">
                     <div class="togo__clock">
@@ -133,7 +142,7 @@
                     </div>
                 </div>
                   </li>
-                  <li class="togo__slider">
+                  <li class="togo__slider__item">
               <div class="togo__photo">
                   <img src="img/destinations/rome.jpg" alt="">
                   <div class="togo__clock">
@@ -158,16 +167,16 @@
                   </li>
               </ul>
           </div>
-          <button class="illust__slider-btn illust__right-btn">
-            <i class="fas fa-chevron-right"></i>
+          <button>
+            <i class="fas fa-chevron-right" data-id="right-btn"></i>
           </button>
       </div>
       <div class="togo__btns">
-          <input class="togo__btn" value="slide1" name="destinations" type="radio" checked>
-          <input class="togo__btn" value="slide2" name="destinations" type="radio">
-          <input class="togo__btn" value="slide3" name="destinations" type="radio">
-          <input class="togo__btn" value="slide4" name="destinations" type="radio">
-          <input class="togo__btn" value="slide5" name="destinations" type="radio">
+          <input class="togo__btn" data-value="slide1" name="destinations" type="radio" checked>
+          <input class="togo__btn" data-value="slide2" name="destinations" type="radio">
+          <input class="togo__btn" data-value="slide3" name="destinations" type="radio">
+          <input class="togo__btn" data-value="slide4" name="destinations" type="radio">
+          <input class="togo__btn" data-value="slide5" name="destinations" type="radio">
       </div>
   </section>
   </div>

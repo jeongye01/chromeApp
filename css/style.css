@@ -2,6 +2,8 @@
 @import "variables.css";
 @import "background.css";
 @import "left__header.css";
+@import "togo.css";
+@import "quotes.css";
 body {
   width: 100vw;
   height: 100vh;
@@ -9,4 +11,7 @@ body {
 }
 * {
   box-sizing: border-box;
+}
+.hidden {
+  display: none;
 }
