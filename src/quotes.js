@@ -34,3 +34,8 @@ const bg=document.querySelector(".quotes");
 const color1=Math.floor(Math.random()*colors.length);
 const color2=Math.floor(Math.random()*colors.length);
 bg.style.background="linear-gradient(45deg,"+colors[color1]+","+colors[color2]+")";
+
+
+const quote=document.querySelector(".quotes__text");
+const text=Math.floor(Math.random()*quotes.length);
+quote.innerText=quotes[text];
