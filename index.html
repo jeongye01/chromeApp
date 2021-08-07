@@ -11,6 +11,8 @@
   <script src="src/togo.js" defer></script> 
   <script src="src/quotes.js" defer></script>
   <script src="src/weather.js" defer></script>
+  <script src="src/linear-gradient.js" defer></script>
+  <script src="src/clock.js" defer></script>
 </head>
 <body>
   <div class="left">
@@ -31,11 +33,12 @@
   </section>
   <div class="quotes-weahter-container">
     <section class="quotes">
-      <p class="quotes__text">faslkdnflasndfl</p>
+      <p class="quotes__text"></p>
   
     </section>
     <section class="weather">
-     
+      <span></span>
+      <span></span>
     </section>
   </div>
  
@@ -171,15 +174,25 @@
           </button>
       </div>
       <div class="togo__btns">
-          <input class="togo__btn" data-value="slide1" name="destinations" type="radio" checked>
-          <input class="togo__btn" data-value="slide2" name="destinations" type="radio">
-          <input class="togo__btn" data-value="slide3" name="destinations" type="radio">
-          <input class="togo__btn" data-value="slide4" name="destinations" type="radio">
-          <input class="togo__btn" data-value="slide5" name="destinations" type="radio">
-      </div>
+        <input class="togo__btn" data-value="slide1" name="destinations" type="radio" checked>
+        <input class="togo__btn" data-value="slide2" name="destinations" type="radio">
+        <input class="togo__btn" data-value="slide3" name="destinations" type="radio">
+        <input class="togo__btn" data-value="slide4" name="destinations" type="radio">
+        <input class="togo__btn" data-value="slide5" name="destinations" type="radio">
+    </div>
   </section>
   </div>
-  <div class="right"></div>
+  <div class="right">
+    <section class="clock">
+      <div>
+      <span class="clock__text"></span>
+    </div>
+    </section>
+    <section class="progress"></section>
+    <section class="todo">
+
+    </section>
+  </div>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </body>
 </html>

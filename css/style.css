@@ -3,11 +3,15 @@
 @import "background.css";
 @import "left__header.css";
 @import "togo.css";
-@import "quotes.css";
+@import "quotes-weather.css";
+@import "clock.css";
+
 body {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 * {
   box-sizing: border-box;

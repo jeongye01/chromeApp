@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 2em;
+  padding-right: 0em;
   position: relative;
 }
 .bgImage {
@@ -12,4 +13,13 @@
   height: 100%;
   top: 0px;
   z-index: -1;
+}
+.right {
+  width: 40%;
+  padding: 2em;
+  padding-left: 0em;
+  padding-right: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
