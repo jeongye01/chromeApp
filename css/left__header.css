@@ -5,16 +5,24 @@
   height: 4em;
   width: 100%;
   margin-bottom: 4em;
+  color: var(--main-color);
 }
-.name-form {
+.name {
   width: 40%;
   height: 90%;
   border: var(--border);
   border-radius: 4em;
   padding: 0.2em;
   box-shadow: var(--box-shadow-white);
+  display: grid;
+  place-items: center;
 }
-.name-input {
+
+.name__form {
+  width: 100%;
+  height: 100%;
+}
+.name__input {
   text-align: center;
   width: 100%;
   height: 100%;
@@ -22,11 +30,11 @@
   border: none;
   outline: none;
 }
-.name-input::placeholder {
-  color: var(--main-color);
+.name__input::placeholder {
   font-size: 1.2em;
+  color: var(--main-color);
 }
-.name-input:focus {
+.name__input:focus {
   color: var(--main-color);
 }
 .music {
