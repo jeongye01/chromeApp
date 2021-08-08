@@ -5,6 +5,7 @@
 @import "togo.css";
 @import "quotes-weather.css";
 @import "clock.css";
+@import "todo.css";
 
 body {
   width: 100vw;
