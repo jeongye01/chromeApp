@@ -22,8 +22,8 @@ const bgQuote=document.querySelector(".quotes");
 const quoteColor1=Math.floor(Math.random()*colors.length);
 const quoteColor2=Math.floor(Math.random()*colors.length);
 bgQuote.style.background="linear-gradient(45deg,"+colors[quoteColor1]+","+colors[quoteColor2]+")";
-
+/*
 const bgClock=document.querySelector(".clock");
 const clockColor1=Math.floor(Math.random()*colors.length);
 const clockColor2=Math.floor(Math.random()*colors.length);
-bgClock.style.background="linear-gradient(45deg,"+colors[clockColor1]+","+colors[clockColor2]+")";
+bgClock.style.background="linear-gradient(45deg,"+colors[clockColor1]+","+colors[clockColor2]+")";*/

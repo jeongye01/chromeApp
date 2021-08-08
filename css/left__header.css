@@ -12,6 +12,7 @@
   border: var(--border);
   border-radius: 4em;
   padding: 0.2em;
+  box-shadow: var(--box-shadow-white);
 }
 .name-input {
   text-align: center;
@@ -44,6 +45,7 @@
   text-align: center;
   font-size: 1.2em;
   margin-bottom: 0.5em;
+  box-shadow: var(--box-shadow-white);
 }
 .music__btns {
   width: 60%;
