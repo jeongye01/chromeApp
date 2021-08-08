@@ -15,6 +15,8 @@ function paintTodos(newTodoObj){
   span.innerText=newTodoObj.text;
   button.innerText="X";
   button.addEventListener("click",handleTodoDelete);
+  li.id=newTodoObj.id;
+  console.log(li.id);
   li.appendChild(span);
   li.appendChild(button);
   todoList.appendChild(li);
@@ -25,7 +27,7 @@ function saveTodos(){
 function handleTodoDelete(event){
   const li=event.target.parentElement;
   li.remove();
-  console.log(todos);
+  console.log(li.id);
   todos=todos.filter((todo)=>parseInt(todo.id)!==parseInt(li.id));
   console.log(todos);
   saveTodos();
@@ -47,8 +49,9 @@ todoForm.addEventListener("submit",handleTodoSubmit);
 
 const savedTodos=localStorage.getItem(TODO_KEY);
 if(savedTodos!==null){
-   const parsedTodos=JSON.parse(savedTodos);
-   parsedTodos.forEach(paintTodos);
+  const parsedTodos=JSON.parse(savedTodos);
+  parsedTodos.forEach(paintTodos);
+  todos=parsedTodos;
 }
 
 
