@@ -7,11 +7,12 @@
   box-shadow: var(--box-shadow);
   border-radius: 2em;
 }
-.todo__remaining {
+.todo__remaining-text {
 }
-.todo__completed {
+.todo__completed-text {
+  text-decoration: line-through;
 }
-.todo__all {
+.todo__all-text {
 }
 .todo-header {
   display: flex;

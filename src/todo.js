@@ -1,38 +1,156 @@
 const todoForm=document.querySelector(".todo__form");
 const todoInput=document.querySelector(".todo__input");
-const todoList=document.querySelector(".todo__list");
+/*todo list*/
+const listAll=document.querySelector("#todo__list--all");
+const listRemaining=document.querySelector("#todo__list--remaining");
+const listCompleted=document.querySelector("#todo__list--compeleted");
 
+/*buttons*/
+const allBtn=document.querySelector("#todo__all");
+const remainingBtn=document.querySelector("#todo__remaining");
+const completedBtn=document.querySelector("#todo__completed");
+
+
+/*todo List*/
 let todos=[];
 let completed=[];
-let remaing=[];
-const TODO_KEY="todos";
-function addTodos(newTodoObj){
-  todos.push(newTodoObj);
+let remaining=[];
+
+
+/*keys*/
+const TODOS_KEY="todos";
+const REMAINING_KEY="remaining";
+const COMPLETED_KEY="completed";
+
+/*onBtnClick functions*/
+function onAllBtn(){
+  if(listAll.classList.contains("hidden")){listAll.classList.remove("hidden");}
+  if(!(listRemaining.classList.contains("hidden"))){listRemaining.classList.add("hidden");}
+  if(!(listCompleted.classList.contains("hidden"))){listCompleted.classList.add("hidden");}
 }
+function onRemaningBtn(){
+  if(!(listAll.classList.contains("hidden"))){listAll.classList.add("hidden");}
+  if((listRemaining.classList.contains("hidden"))){listRemaining.classList.remove("hidden");}
+  if(!(listCompleted.classList.contains("hidden"))){listCompleted.classList.add("hidden");}
+}
+function onCompletedBtn(){
+  if(!(listAll.classList.contains("hidden"))){listAll.classList.add("hidden");}
+  if(!(listRemaining.classList.contains("hidden"))){listRemaining.classList.add("hidden");}
+  if((listCompleted.classList.contains("hidden"))){listCompleted.classList.remove("hidden");}
+}
+
+
+/* paint functions */
 function paintTodos(newTodoObj){
   const li=document.createElement("li");
   const span=document.createElement("span");
-  const button=document.createElement("button");
+  const completeBtn=document.createElement("button");
+  const deleteBtn=document.createElement("button");
+  
   span.innerText=newTodoObj.text;
-  button.innerText="X";
-  button.addEventListener("click",handleTodoDelete);
   li.id=newTodoObj.id;
-  console.log(li.id);
   li.appendChild(span);
-  li.appendChild(button);
-  todoList.appendChild(li);
+  if(newTodoObj.checked){
+    span.classList.add("todo__completed-text");
+  }
+  else{completeBtn.setAttribute("class","far fa-check-circle");
+  completeBtn.addEventListener("click",handleCompleted);
+  li.appendChild(completeBtn);}
+  
+  deleteBtn.setAttribute("class","far fa-trash-alt");
+  deleteBtn.addEventListener("click",deleteTodo);
+  li.appendChild(deleteBtn);
+  listAll.appendChild(li);
 }
+
+function paintRemainings(newTodoObj){
+  const li=document.createElement("li");
+  const span=document.createElement("span");
+  span.innerText=newTodoObj.text;
+  li.id=newTodoObj.id;  
+  li.appendChild(span);
+  listRemaining.appendChild(li);
+}
+function paintCompleteds(newCompletedObj){
+  const li=document.createElement("li");
+  const span=document.createElement("span");
+  span.innerText=newCompletedObj.text;
+  li.id=newCompletedObj.id;
+  li.appendChild(span);
+  listCompleted.appendChild(li);
+  
+}
+
+/*save functions */
 function saveTodos(){
-  localStorage.setItem(TODO_KEY,JSON.stringify(todos));
+  localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
 }
-function handleTodoDelete(event){
+function saveRemainings(){
+  localStorage.setItem(REMAINING_KEY,JSON.stringify(remaining));
+}
+function saveCompleteds(){
+  localStorage.setItem(COMPLETED_KEY,JSON.stringify(completed));
+}
+
+
+
+/*Deletefunction */
+function deleteTodo(event){
   const li=event.target.parentElement;
   li.remove();
-  console.log(li.id);
+  const liRemaining=document.getElementById(`${String(parseInt(li.id)+1)}`);
+  if(liRemaining!==null){
+    liRemaining.remove();
+    remaining=remaining.filter((remain)=>parseInt(remain.id)!==parseInt(li.id)+1);
+    saveRemainings();}
+  const liCompleted=document.getElementById(`${String(parseInt(li.id)+2)}`);
+  if(liCompleted!==null){
+    liCompleted.remove();
+    completed=completed.filter((complete)=>parseInt(complete.id)!==parseInt(li.id)+2);
+    saveCompleteds();}
   todos=todos.filter((todo)=>parseInt(todo.id)!==parseInt(li.id));
-  console.log(todos);
+  
+  
   saveTodos();
+  
+  
 }
+function deleteRemaning(ID){
+  const li=document.getElementById(`${String(ID)}`);
+  console.log(li);
+  remaining=remaining.filter((remain)=>parseInt(remain.id)!==parseInt(ID));
+  li.remove();
+  saveRemainings();
+}
+
+
+
+
+/*Complete Function */
+function handleCompleted(event){
+  const btn=event.target;
+  const li=event.target.parentElement;
+  li.firstChild.classList.add("todo__completed-text");
+  btn.remove();
+  const newCompletedObj ={
+    text: li.firstChild.innerText,
+    id:parseInt(li.id)+2,
+  }
+  for(let i=0;i<todos.length;i++){
+    if(todos[i].id===parseInt(li.id)){
+      todos[i].checked=true;
+    }
+  }
+  saveTodos();
+  paintCompleteds(newCompletedObj);
+  completed.push(newCompletedObj);
+  saveCompleteds();
+  deleteRemaning(parseInt(li.id)+1);
+  
+}
+
+
+/*submit function*/
 function handleTodoSubmit(event){
   event.preventDefault();
   const newTodo=todoInput.value;
@@ -40,19 +158,46 @@ function handleTodoSubmit(event){
   const newTodoObj={
     text:newTodo,
     id:Date.now(),
+    checked:false
   };
-  addTodos(newTodoObj);
+  const newRemaningObj={
+    text:newTodo,
+    id:Date.now()+1,  };
+  todos.push(newTodoObj);
+  remaining.push(newRemaningObj);
   paintTodos(newTodoObj);
+  paintRemainings(newRemaningObj);
   saveTodos();
+  saveRemainings();
 }
 
+/*eventLister-submit */
 todoForm.addEventListener("submit",handleTodoSubmit);
+/*eventLister-btn */
+allBtn.addEventListener("click",onAllBtn);
+remainingBtn.addEventListener("click",onRemaningBtn);
+completedBtn.addEventListener("click",onCompletedBtn);
 
-const savedTodos=localStorage.getItem(TODO_KEY);
+
+const savedTodos=localStorage.getItem(TODOS_KEY);
+const savedRemainings=localStorage.getItem(REMAINING_KEY);
+const savedCompleteds=localStorage.getItem(COMPLETED_KEY);
 if(savedTodos!==null){
-  const parsedTodos=JSON.parse(savedTodos);
-  parsedTodos.forEach(paintTodos);
-  todos=parsedTodos;
+  todos=JSON.parse(savedTodos);
+  todos.forEach(paintTodos);
 }
+if(savedRemainings!==null){
+  remaining=JSON.parse(savedRemainings);
+  remaining.forEach(paintRemainings);
+}
+
+if(savedCompleteds!==null){
+  completed=JSON.parse(savedCompleteds);
+  completed.forEach(paintCompleteds);
+}
+
+
+
+
 
 
