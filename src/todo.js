@@ -1,9 +1,10 @@
-
-
 const todoForm=document.querySelector(".todo__form");
 const todoInput=document.querySelector(".todo__input");
 const todoList=document.querySelector(".todo__list");
+
 let todos=[];
+let completed=[];
+let remaing=[];
 const TODO_KEY="todos";
 function addTodos(newTodoObj){
   todos.push(newTodoObj);

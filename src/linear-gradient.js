@@ -23,7 +23,7 @@ const quoteColor1=Math.floor(Math.random()*colors.length);
 const quoteColor2=Math.floor(Math.random()*colors.length);
 bgQuote.style.background="linear-gradient(45deg,"+colors[quoteColor1]+","+colors[quoteColor2]+")";
 /*
-const bgClock=document.querySelector(".clock");
-const clockColor1=Math.floor(Math.random()*colors.length);
-const clockColor2=Math.floor(Math.random()*colors.length);
-bgClock.style.background="linear-gradient(45deg,"+colors[clockColor1]+","+colors[clockColor2]+")";*/
+const bgTodo=document.querySelector(".todo__input");
+const todoColor1= quoteColor1;
+const todoColor2=quoteColor2;
+bgTodo.style.background="linear-gradient(45deg,"+colors[todoColor1]+","+colors[todoColor2]+")";*/
