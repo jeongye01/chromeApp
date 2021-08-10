@@ -39,19 +39,20 @@ const COMPLETED_KEY="completed";
 
 /*onBtnClick functions*/
 function onAllBtn(){
-  if(listAll.classList.contains("hidden")){listAll.classList.remove("hidden");}
-  if(!(listRemaining.classList.contains("hidden"))){listRemaining.classList.add("hidden");}
-  if(!(listCompleted.classList.contains("hidden"))){listCompleted.classList.add("hidden");}
+  listAll.classList.toggle("hidden",false);
+  listRemaining.classList.toggle("hidden",true);
+  listCompleted.classList.toggle("hidden",true);
+  
 }
 function onRemaningBtn(){
-  if(!(listAll.classList.contains("hidden"))){listAll.classList.add("hidden");}
-  if((listRemaining.classList.contains("hidden"))){listRemaining.classList.remove("hidden");}
-  if(!(listCompleted.classList.contains("hidden"))){listCompleted.classList.add("hidden");}
+  listAll.classList.toggle("hidden",true);
+  listRemaining.classList.toggle("hidden",false);
+  listCompleted.classList.toggle("hidden",true);
 }
 function onCompletedBtn(){
-  if(!(listAll.classList.contains("hidden"))){listAll.classList.add("hidden");}
-  if(!(listRemaining.classList.contains("hidden"))){listRemaining.classList.add("hidden");}
-  if((listCompleted.classList.contains("hidden"))){listCompleted.classList.remove("hidden");}
+  listAll.classList.toggle("hidden",true);
+  listRemaining.classList.toggle("hidden",true);
+  listCompleted.classList.toggle("hidden",false);
 }
 
 

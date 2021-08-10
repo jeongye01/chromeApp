@@ -1,7 +1,7 @@
 .quotes-weahter-container {
   width: 80%;
   height: 40vh;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: space-between;
 }

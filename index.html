@@ -8,14 +8,15 @@
   <title>Momentum</title>
   <script src="src/index.js" defer></script>
   <script src="src/background.js" defer></script>
-  <script src="src/name.js" defer></script> 
+  <script src="src/name.js" defer></script>
+  <script src="src/worldtime.js" defer></script>   
   <script src="src/togo.js" defer></script> 
   <script src="src/quotes.js" defer></script>
   <script src="src/weather.js" defer></script>
   <script src="src/linear-gradient.js" defer></script>
   <script src="src/clock.js" defer></script>
   <script src="src/todo.js" defer></script>
-  
+ 
 </head>
 <body>
   <div class="left">
@@ -50,11 +51,14 @@
  
     <section class="togo">
       <header class="togo__header">
-        <span>Outside Korea</span>
-        <i class="fas fa-plane-departure"></i></header>
+        <span>Outside Korea <i class="fas fa-plane-departure"></i></span>
+        <button id="worldTimeBtn" class="world-time-btn">
+          World Time <i class="far fa-clock"></i>
+        </button>
+      </header>
       <div class="togo__content">
           <button>
-            <i class="fas fa-chevron-left" data-id="left-btn"></i>
+            <i class="fas fa-chevron-left " data-id="left-btn"></i>
           </button>
           <div class="togo__wrapper">
               <ul class="togo__slider">
