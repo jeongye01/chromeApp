@@ -2,7 +2,7 @@
   margin-bottom: 1em;
   width: 90%;
   height: 7vh;
-  background-color: rgb(240, 238, 217);
+  background-color: rgb(245, 245, 245);
   box-shadow: var(--box-shadow);
   border-radius: 2em;
   display: flex;
@@ -15,12 +15,12 @@
 }
 .progress {
   width: 90%;
-  background-color: rgb(155, 195, 211);
+  background-color: rgb(201, 201, 201);
   border-radius: 2em;
 }
 .progress-bar {
   width: 0%;
   height: 0.5em;
-  background-color: rgb(39, 84, 136);
+  background-color: rgb(211, 105, 221);
   border-radius: 2em;
 }
