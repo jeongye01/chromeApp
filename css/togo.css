@@ -1,12 +1,12 @@
 .togo {
   width: 90%;
   padding: 1em;
-  background-color: rgba(255, 192, 203, 0.4);
+  background-color: rgb(187, 132, 226);
   border-radius: 2em;
   box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
 }
 .togo__header {
-  color: var(--main-color);
+  color: black;
 }
 .togo__content {
   display: flex;
@@ -21,7 +21,7 @@
 }
 .togo__content button i {
   font-size: 1.5em;
-  color: var(--main-color);
+  color: black;
 }
 
 .togo__wrapper {

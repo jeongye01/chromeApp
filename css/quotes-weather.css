@@ -20,7 +20,7 @@
   height: 100%;
   display: grid;
   place-items: center;
-  background-color: rgba(125, 158, 196, 0.4);
+  background-color: rgb(139, 177, 221);
   border-radius: 1em;
   box-shadow: var(--box-shadow);
 }
