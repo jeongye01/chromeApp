@@ -73,10 +73,13 @@ function paintRemainings(newTodoObj){
 }
 function paintCompleteds(newCompletedObj){
   const li=document.createElement("li");
-  const span=document.createElement("span");
-  span.innerText=newCompletedObj.text;
+  const span1=document.createElement("span");
+  const span2=document.createElement("span");
+  span1.innerText=newCompletedObj.text;
+  span2.innerText=newCompletedObj.timeStamp;
   li.id=newCompletedObj.id;
-  li.appendChild(span);
+  li.appendChild(span1);
+  li.appendChild(span2);
   listCompleted.appendChild(li);
   
 }
@@ -130,11 +133,16 @@ function deleteRemaning(ID){
 function handleCompleted(event){
   const btn=event.target;
   const li=event.target.parentElement;
+  const time=new Date();
+  const h=String(time.getHours()).padStart(2,"0");
+  const m=String(time.getMinutes()).padStart(2,"0");
+  const s=String(time.getSeconds()).padStart(2,"0");
   li.firstChild.classList.add("todo__completed-text");
   btn.remove();
   const newCompletedObj ={
     text: li.firstChild.innerText,
     id:parseInt(li.id)+2,
+    timeStamp:`${h}:${m}:${s}`
   }
   for(let i=0;i<todos.length;i++){
     if(todos[i].id===parseInt(li.id)){
@@ -162,7 +170,8 @@ function handleTodoSubmit(event){
   };
   const newRemaningObj={
     text:newTodo,
-    id:Date.now()+1,  };
+    id:Date.now()+1,
+  };
   todos.push(newTodoObj);
   remaining.push(newRemaningObj);
   paintTodos(newTodoObj);

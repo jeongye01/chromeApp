@@ -197,7 +197,7 @@
     <section class="todo">
       <div class="todo-header">
         <form class="todo__form">
-          <input class="todo__input" placeholder="Enter Your To-Do">
+          <input class="todo__input" required placeholder="Enter Your To-Do">
 
         </form>
         <div class="todo-header__btns">
@@ -208,10 +208,22 @@
         </div>
       </div>
       <ul id="todo__list--all" class="todo__list ">
+        <div class="todo__list__header">
+          <span class="page-title">Things to do today.</span>
+          <button class="resetBtn">Start new day.</button>
+        </div>
       </ul>
       <ul id="todo__list--remaining" class="todo__list hidden">
+        <div class="todo__list__header">
+          <span class="page-title">Remaining to-dos</span>
+          <button class="resetBtn">Start new day.</button>
+        </div>
       </ul>
       <ul id="todo__list--compeleted" class="todo__list hidden">
+        <div class="todo__list__header">
+          <span class="page-title">Completed to-dos</span>
+          <button class="resetBtn">Start new day.</button>
+        </div>
       </ul>
     </section>
   </div>
