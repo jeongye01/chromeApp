@@ -7,6 +7,7 @@
   box-shadow: var(--box-shadow-white);
   display: grid;
   place-items: center;
+  margin-bottom: 1.5em;
 }
 .clock div {
   background: transparent;
