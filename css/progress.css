@@ -15,10 +15,12 @@
 }
 .progress {
   width: 90%;
-  background-color: rgb(188, 155, 211);
+  background-color: rgb(155, 195, 211);
+  border-radius: 2em;
 }
 .progress-bar {
-  width: 1%;
+  width: 0%;
   height: 0.5em;
-  background-color: rgb(95, 39, 136);
+  background-color: rgb(39, 84, 136);
+  border-radius: 2em;
 }

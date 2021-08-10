@@ -10,12 +10,27 @@ const allBtn=document.querySelector("#todo__all");
 const remainingBtn=document.querySelector("#todo__remaining");
 const completedBtn=document.querySelector("#todo__completed");
 
+/*progressBar*/
+const progressBar=document.getElementById("progressBar");
+const pregoressText=document.getElementById("progressText");
+function calProgress(todo,comp){
+ 
+  if(todo.length===0){
+    pregoressText.innerText="0% completed";
+    progressBar.style.width=0+"%";
+  }
+  else{
+    const percentage=parseInt((comp.length/todo.length)*100);
+    pregoressText.innerText=`${percentage}% completed`;
+    progressBar.style.width=percentage+"%";}
+}
+
+
 
 /*todo List*/
 let todos=[];
 let completed=[];
 let remaining=[];
-
 
 /*keys*/
 const TODOS_KEY="todos";
@@ -115,7 +130,7 @@ function deleteTodo(event){
   
   
   saveTodos();
-  
+  calProgress(todos,completed);
   
 }
 function deleteRemaning(ID){
@@ -124,6 +139,7 @@ function deleteRemaning(ID){
   remaining=remaining.filter((remain)=>parseInt(remain.id)!==parseInt(ID));
   li.remove();
   saveRemainings();
+ 
 }
 
 
@@ -154,7 +170,7 @@ function handleCompleted(event){
   completed.push(newCompletedObj);
   saveCompleteds();
   deleteRemaning(parseInt(li.id)+1);
-  
+  calProgress(todos,completed);
 }
 
 
@@ -178,6 +194,7 @@ function handleTodoSubmit(event){
   paintRemainings(newRemaningObj);
   saveTodos();
   saveRemainings();
+  calProgress(todos,completed);
 }
 
 /*eventLister-submit */
@@ -205,8 +222,7 @@ if(savedCompleteds!==null){
   completed.forEach(paintCompleteds);
 }
 
-
-
+calProgress(todos,completed);
 
 
 
