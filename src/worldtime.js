@@ -176,10 +176,10 @@ function updateWorldTime(){
   timeRome.innerText=ROME.format(new Date());
   timeShanghai.innerText=SHANGHAI.format(new Date());
   timeBern.innerText=BERN.format(new Date());
-  
+ 
 }
-updateWorldTime();
 setInterval(updateWorldTime,1000);
+
 
 
 
@@ -192,18 +192,19 @@ function addHidden(elem){
 togoClock.forEach(addHidden);
 
 
-function displayWorldTime(){
+function onWorldTimeBtn(){
   togoClock.forEach(removeHidden);
   if(togoClock[0].classList.contains("hidden")){
-    console.log("alalall")
     imgText.classList.toggle("hidden",true);
     timeText.classList.toggle("hidden",false);
+    
+   
   }else{
     imgText.classList.toggle("hidden",false);
     timeText.classList.toggle("hidden",true);
   }
 }
-worldTimeBtn.addEventListener("click",displayWorldTime);
+worldTimeBtn.addEventListener("click",onWorldTimeBtn);
 
 
 
