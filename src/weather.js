@@ -11,7 +11,7 @@ function onGeoOk(position){
     city.innerText=data.name;
     weather.innerText=`${data.weather[0].main}`;
     paintWeatherIcon(icon,`${data.weather[0].icon}`);
-    temp.innerText=`${data.main.temp} \u00B0`;
+    temp.innerText=`${data.main.temp} \u2103`;
   });
 }
 

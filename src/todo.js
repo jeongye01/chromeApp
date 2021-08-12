@@ -65,7 +65,7 @@ function paintTodos(newTodoObj){
   
   span.innerText=newTodoObj.text;
   li.id=newTodoObj.id;
-  li.appendChild(span);
+  
   if(newTodoObj.checked){
     span.classList.add("todo__completed-text");
   }
@@ -76,6 +76,7 @@ function paintTodos(newTodoObj){
   deleteBtn.setAttribute("class","far fa-trash-alt");
   deleteBtn.addEventListener("click",deleteTodo);
   li.appendChild(deleteBtn);
+  li.appendChild(span);
   listAll.appendChild(li);
 }
 
