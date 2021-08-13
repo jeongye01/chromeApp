@@ -37,6 +37,12 @@
 .name__input:focus {
   color: var(--main-color);
 }
+#nameEdit {
+  background: transparent;
+  border: none;
+  color: var(--main-color);
+  cursor: pointer;
+}
 .sites {
   width: 40%;
   height: 90%;
