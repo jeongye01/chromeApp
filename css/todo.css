@@ -9,11 +9,6 @@
   align-items: center;
 }
 
-.todo__completed-text {
-  text-decoration: line-through;
-  color: tomato;
-}
-
 .todo-header {
   display: flex;
   padding: 0.5em 1em;
@@ -107,4 +102,8 @@
   border: none;
   background-color: beige;
   box-shadow: var(--box-shadow);
+}
+.todo__completed-text {
+  text-decoration: line-through;
+  color: tomato;
 }

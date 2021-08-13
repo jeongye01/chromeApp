@@ -60,7 +60,6 @@ function onCompletedBtn(){
 function paintTodos(newTodoObj){
   const li=document.createElement("li");
   const span=document.createElement("span");
-  const completeBtn=document.createElement("button");
   const deleteBtn=document.createElement("button");
   
   span.innerText=newTodoObj.text;
@@ -69,13 +68,17 @@ function paintTodos(newTodoObj){
   if(newTodoObj.checked){
     span.classList.add("todo__completed-text");
   }
-  else{completeBtn.setAttribute("class","far fa-check-circle");
-  completeBtn.addEventListener("click",handleCompleted);
-  li.appendChild(completeBtn);}
+  else{
+    const completeBtn=document.createElement("button");
+    completeBtn.setAttribute("class","far fa-check-circle");
+    completeBtn.addEventListener("click",handleCompleted);
+    li.appendChild(completeBtn);
+  }
   
   deleteBtn.setAttribute("class","far fa-trash-alt");
   deleteBtn.addEventListener("click",deleteTodo);
   li.appendChild(deleteBtn);
+ 
   listAll.appendChild(li);
 }
 

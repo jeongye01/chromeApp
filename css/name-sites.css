@@ -1,10 +1,10 @@
-.left__header {
+.name-sites-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 4em;
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
   color: var(--main-color);
 }
 .name {
@@ -37,42 +37,33 @@
 .name__input:focus {
   color: var(--main-color);
 }
-.music {
+.sites {
   width: 40%;
+  height: 90%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.music__title {
-  width: 60%;
+  justify-content: space-evenly;
   color: var(--main-color);
   border: var(--border);
   border-radius: 2em;
-  padding: 0.2em;
-  text-align: center;
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
+  padding: 0.3em;
   box-shadow: var(--box-shadow-white);
 }
-.music__btns {
-  width: 60%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-}
-.music__btns button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1.7em;
-  height: 1.7em;
-  color: var(--main-color);
-  border: var(--border);
-  border-radius: 50%;
-  background: transparent;
-}
 
-.music__btns button i {
-  font-size: 0.8em;
+.sites a {
+  width: 15%;
+  height: 100%;
+  border-radius: 0.5em;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--box-shadow-white);
+  text-decoration: none;
+  color: black;
+  font-size: 2em;
+}
+.sites a:nth-child(3) {
+  color: red;
+}
+.sites a:last-child {
+  color: orange;
 }
