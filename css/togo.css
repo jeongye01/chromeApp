@@ -60,6 +60,7 @@
 }
 .togo__slider__item {
   display: flex;
+  width: 100%;
 }
 
 .togo__photo {
@@ -68,6 +69,8 @@
   cursor: pointer;
   position: relative;
   padding: 0.5em;
+  --togoImg-width: 12em;
+  --togoImg-heigth: 12em;
   width: var(--togoImg-width);
   height: var(--togoImg-height);
   border-radius: 1.7em;
@@ -81,6 +84,7 @@
   color: white;
   background-color: rgb(83, 15, 131);
   border-radius: 1.7em;
+  font-size: 0.8em;
 }
 
 .togo__photo img {
@@ -113,4 +117,12 @@ input[type="radio"] {
 
 input[type="radio"]:checked {
   background-color: black;
+}
+@media screen and (max-width: 800px) {
+  .togo {
+    width: 100%;
+  }
+  .togo__clock {
+    font-size: 0.8em;
+  }
 }

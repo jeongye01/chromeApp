@@ -1,5 +1,5 @@
 .clock {
-  width: 60%;
+  width: 80%;
   height: 8vh;
   border-radius: 3em;
   border: var(--border);
@@ -18,4 +18,9 @@
   place-items: center;
   font-size: 1.5em;
   color: var(--main-color);
+}
+@media screen and (max-width: 800px) {
+  .clock {
+    width: 100%;
+  }
 }

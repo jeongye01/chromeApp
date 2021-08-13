@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 @import "reset.css";
 @import "variables.css";
 @import "background.css";
@@ -11,6 +13,7 @@
   box-sizing: border-box;
 }
 body {
+  font-family: "Open Sans", sans-serif;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,9 +22,16 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    height: 200%;
+    display: block;
+  }
 }
