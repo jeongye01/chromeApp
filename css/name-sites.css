@@ -46,15 +46,17 @@
 .sites {
   width: 40%;
   height: 90%;
-  display: flex;
-  justify-content: space-evenly;
   color: var(--main-color);
   border: var(--border);
   border-radius: 2em;
   padding: 0.3em;
   box-shadow: var(--box-shadow-white);
 }
-
+.sites__div {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}
 .sites a {
   width: 15%;
   height: 100%;
@@ -72,4 +74,11 @@
 }
 .sites a:last-child {
   color: orange;
+}
+.sites__div:hover {
+  transform: scale(0.9, 0.9);
+}
+
+.sites a:hover {
+  transform: scale(1.3, 1.3);
 }

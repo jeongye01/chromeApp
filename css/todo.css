@@ -50,6 +50,10 @@
   height: 2em;
   background: transparent;
   border: none;
+  cursor: pointer;
+}
+.todo__btn:hover {
+  color: gold;
 }
 .todo__list {
   width: 90%;
